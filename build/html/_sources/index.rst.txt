@@ -3,15 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Python数据分析
+数据结构和算法
 ==============================
 
-`第2次上课代码6班 <https://godblesschina.github.io/ds2022/第2次上课代码6班.html>`_
+`习题答案 <https://godblesschina.github.io/ds2022/习题答案.html>`_
 
 
-`第2次课代码 <https://godblesschina.github.io/ds2022/第2次课代码.html>`_
-
-
-`第2次课内容 <https://godblesschina.github.io/ds2022/第2次课内容.html>`_
+`第一次课绪论 <https://godblesschina.github.io/ds2022/第一次课绪论.html>`_
 
 

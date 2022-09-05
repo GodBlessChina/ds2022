@@ -3,6 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Python数据分析
+数据结构和算法
 ==============================
 replace
