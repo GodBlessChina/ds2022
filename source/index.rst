@@ -6,9 +6,6 @@
 数据结构和算法
 ==============================
 
-`习题答案 <https://godblesschina.github.io/ds2022/习题答案.html>`_
-
-
 `第一次课绪论 <https://godblesschina.github.io/ds2022/第一次课绪论.html>`_
 
 
