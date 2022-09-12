@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=gb2312"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.3.2.2 (Windows)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2022-09-12T16:18:28.903000000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		td p { orphans: 0; widows: 0; background: transparent }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="zh-CN" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 100%; margin-bottom: 0cm">
+第二次课 线性表</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm">复习：绪论部分</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><span lang="en-US">1
+</span></font>为什么要学习《数据结构》课程</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm">人类社会的发展，迄今经历了和经历着三个浪潮：第一次浪潮为农业阶段，从约<font face="Liberation Serif, serif"><span lang="en-US">1</span></font>万年前开始；
+第二次浪潮为工业阶段，从<font face="Liberation Serif, serif"><span lang="en-US">17</span></font>世纪末开始；第三次浪潮为正在到来的<font color="#c9211e"><b>信息化</b></font>阶段。
+&mdash;<font face="Liberation Serif, serif"><span lang="en-US">				&mdash;</span></font>《第三次浪潮（<font face="Liberation Serif, serif"><span lang="en-US">1980</span></font>版<font face="Liberation Serif, serif"><span lang="en-US">)</span></font>》<font face="Liberation Serif, serif"><span lang="en-US">,</span></font>阿尔文<font face="Liberation Serif, serif"><span lang="en-US">&middot;</span></font>托夫勒
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<ul>
+	<li><p style="line-height: 100%; margin-bottom: 0cm">《数据结构》学什么？</p>
+	<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><span lang="en-US">1
+	</span></font>如何用程序代码把现实世界的问题<b>信息化</b> 
+	</p>
+	<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><span lang="en-US">2
+	</span></font>如何用计算机高效地处理这些信息从而<b>创造价值</b> 
+	</p>
+	<li><p style="line-height: 100%; margin-bottom: 0cm">什么是信息化呢<font face="Liberation Serif, serif"><span lang="en-US">?</span></font></p>
+	<p style="line-height: 100%; margin-bottom: 0cm"></p>
+</ul>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_206e8563a988233a.gif" name="鍥惧儚1" align="left" width="718" height="328" border="0"/>
+<br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_d3010d446c95d0f1.png" name="鍥惧儚2" align="left" width="763" height="161" border="0"/>
+<br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm">   
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="256*"/>
+
+	<tr>
+		<td width="100%" valign="top" style="border: 1px solid #000000; padding: 0.1cm"><p>
+			排队取号、打车、出租房屋、视讯会议、在线购物、电子地图<font face="Liberation Serif, serif"><span lang="en-US">...</span></font></p>
+		</td>
+	</tr>
+</table>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm">思考：如何使用<font face="Liberation Serif, serif"><span lang="en-US">Java/</span></font>其它编程语言<b>表示以上信息</b>呢
+？</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_48e02db2bda6611.png" name="鍥惧儚3" align="left" width="643" height="358" border="0"/>
+<br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="128*"/>
+
+	<col width="128*"/>
+
+	<tr valign="top">
+		<td width="50%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			计算机组成原理</p>
+		</td>
+		<td width="50%" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0.1cm"><p>
+			硬件相关知识</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			操作系统原理</p>
+		</td>
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0.1cm"><p>
+			操作系统相关知识</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			计算机网络</p>
+		</td>
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0.1cm"><p>
+			网络相关知识</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			数据结构</p>
+		</td>
+		<td width="50%" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0.1cm"><p>
+			数据结构和算法</p>
+		</td>
+	</tr>
+</table>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm">&ldquo;唯一可以确定的是，明天会使我们所有人大吃一惊。&rdquo;
+&mdash;&mdash; 阿尔文<font face="Liberation Serif, serif"><span lang="en-US">&middot;</span></font>托夫勒
+（<font face="Liberation Serif, serif"><span lang="en-US">The sole
+certainty is that tomorrow will surprise us all.</span></font>）</p>
+<p style="line-height: 100%; margin-bottom: 0cm"> 
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_fa1c8d6f126aac76.gif" name="鍥惧儚4" align="middle" width="643" height="150" border="0"/>
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_bed1ff7118cfc7c3.gif" name="鍥惧儚5" align="bottom" width="643" height="364" border="0"/>
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<table width="642" cellpadding="4" cellspacing="0">
+	<col width="104"/>
+
+	<col width="520"/>
+
+	<tr valign="top">
+		<td width="104" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			数据</p>
+		</td>
+		<td width="520" style="border: 1px solid #000000; padding: 0.1cm"><p>
+			计算机中的图像、文字、声音、硬盘等</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="104" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			数据元素</p>
+		</td>
+		<td rowspan="2" width="520" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			<img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_6fa8d5a0b8b631a0.png" name="鍥惧儚6" align="bottom" width="419" height="310" border="0"/>
+</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="104" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			数据项目</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="104" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			数据结构 
+			</p>
+		</td>
+		<td width="520" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			是相互之间存在一种或多种特定关系的数据元素的集合 
+			</p>
+			<p>比如：某个特定门店的排队顾客信息和它 们之间的关系 
+			</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="104" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			数据对象 
+			</p>
+		</td>
+		<td width="520" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			是具有相同性质的数据元素的集合，是数据的一个子集 
+			</p>
+			<p>比如：全国所有门店的排队顾客信息 
+			</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="104" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			<br/>
+
+			</p>
+		</td>
+		<td width="520" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p style="margin-bottom: 0cm">
+			<img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_5ca7856cf83e15f4.gif" name="鍥惧儚8" width="315" height="121" border="0"/>
+</p>
+			<p style="margin-bottom: 0cm"><font face="Liberation Serif, serif"><span lang="en-US">3</span></font>号<font face="Liberation Serif, serif"><span lang="en-US">(</span></font>对象<font face="Liberation Serif, serif"><span lang="en-US">)</span></font>、<font face="Liberation Serif, serif"><span lang="en-US">4</span></font>号<font face="Liberation Serif, serif"><span lang="en-US">(</span></font>对象<font face="Liberation Serif, serif"><span lang="en-US">)</span></font>、<font face="Liberation Serif, serif"><span lang="en-US">5</span></font>号<font face="Liberation Serif, serif"><span lang="en-US">(</span></font>对象<font face="Liberation Serif, serif"><span lang="en-US">)&hellip;...</span></font>之间的关系<font face="Liberation Serif, serif"><span lang="en-US">.</span></font>构成结构</p>
+			<p style="margin-bottom: 0cm"><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_b07413fd25fab92f.gif" name="鍥惧儚7" align="bottom" width="225" height="128" border="0"/>
+
+						</p>
+			<p>每一波顾客都是一个数据对象</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="104" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			数据结构的<font face="Liberation Serif, serif"><span lang="en-US">3</span></font>要素</p>
+		</td>
+		<td width="520" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			逻辑结构</p>
+			<p>物理结构（存储结构）</p>
+			<p>数据的运算</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="104" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			数据的逻辑结构（<font face="Liberation Serif, serif"><span lang="en-US">4</span></font>种）</p>
+		</td>
+		<td width="520" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			集合、线性结构、树形结构、图形结构（网状结构）</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="104" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			数据的物理结构（<font face="Liberation Serif, serif"><span lang="en-US">4</span></font>种）</p>
+		</td>
+		<td width="520" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			线性存储、链式存储、索引存储、散列存储</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="104" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			数据的运算</p>
+		</td>
+		<td width="520" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			施加在数据上的运算包括运算的定义和实现。</p>
+			<p><b>运算的定义</b>是针对<b>逻辑结构</b>的， 指出运算的<b>功能</b>；</p>
+			<p><b>运算的实现</b>是针对<b>存储结构</b>的，指出运算的<b>具体操作步骤</b>。
+						</p>
+		</td>
+	</tr>
+</table>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><b>数据的逻辑结构</b><font face="Liberation Serif, serif"><span lang="en-US"><b>(</b></span></font><b>集合、线性结构、树形结构、图形结构（网状结构）</b><font face="Liberation Serif, serif"><span lang="en-US"><b>)</b></span></font></p>
+<p style="font-weight: normal; line-height: 100%; margin-bottom: 0cm">
+<br/>
+
+</p>
+<table width="100%" cellpadding="4" cellspacing="0">
+	<col width="256*"/>
+
+	<tr>
+		<td width="100%" valign="top" style="border: 1px solid #000000; padding: 0.1cm"><p>
+			<img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_73fea32d697aa8d5.gif" name="鍥惧儚9" align="bottom" width="634" height="281" border="0"/>
+</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+		<td width="100%" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			<img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_87800e48a1e88be4.png" name="鍥惧儚10" align="bottom" width="634" height="293" border="0"/>
+</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+		<td width="100%" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			<img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_fb0b601a2609a9e6.gif" name="鍥惧儚11" align="bottom" width="634" height="316" border="0"/>
+</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+		<td width="100%" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			<img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_e96fdfc04c9ad270.gif" name="鍥惧儚12" align="bottom" width="634" height="267" border="0"/>
+</p>
+		</td>
+	</tr>
+</table>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-left: 2cm; margin-bottom: 0cm"><b>数据的物理结构与逻辑结构的对应关系</b></p>
+<p style="margin-left: 2cm"><b>线性存储、链式存储、索引存储、散列存储</b></p>
+<table width="642" cellpadding="4" cellspacing="0">
+	<col width="632"/>
+
+	<tr>
+		<td width="632" valign="top" style="border: 1px solid #000000; padding: 0.1cm"><p>
+			<img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_c34fb260c7fabbe.gif" name="鍥惧儚13" align="bottom" width="634" height="332" border="0"/>
+</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+		<td width="632" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			<img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_552972d8ec2cf33f.gif" name="鍥惧儚14" align="bottom" width="634" height="264" border="0"/>
+</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+		<td width="632" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			<img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_42a598e15ec733f3.gif" name="鍥惧儚15" align="bottom" width="634" height="296" border="0"/>
+</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+		<td width="632" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			<img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_d6c22b20ef17c47c.png" name="鍥惧儚16" align="bottom" width="634" height="238" border="0"/>
+</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+		<td width="632" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			<img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_bb34db5f1e34886d.gif" name="鍥惧儚17" align="left" width="634" height="241" border="0"/>
+<br/>
+
+			</p>
+		</td>
+	</tr>
+</table>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p align="center" style="line-height: 100%; margin-bottom: 0cm"><b>总结：各个概念之间的关系</b></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_7a7205773b0463f.gif" name="鍥惧儚18" align="bottom" width="643" height="311" border="0"/>
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p align="center" style="line-height: 100%; margin-bottom: 0cm">二 算法</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<table width="642" cellpadding="4" cellspacing="0">
+	<col width="143"/>
+
+	<col width="482"/>
+
+	<tr valign="top">
+		<td width="143" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			算法定义</p>
+		</td>
+		<td width="482" style="border: 1px solid #000000; padding: 0.1cm"><p>
+			详细见课本<font face="Liberation Serif, serif"><span lang="en-US">/</span></font>上次课笔记</p>
+			<p><b>程序 </b><font face="Liberation Serif, serif"><span lang="en-US"><b>=
+			</b></span></font><b>数据结构 </b><font face="Liberation Serif, serif"><span lang="en-US"><b>+
+			</b></span></font><b>算法</b> 
+			</p>
+			<p>算法是解决问题的步骤，类似于食谱，或者操作手册等。</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			算法具备<font face="Liberation Serif, serif"><span lang="en-US">5</span></font>个特点</p>
+		</td>
+		<td width="482" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			有穷性、确定性、有输入<font face="Liberation Serif, serif"><span lang="en-US">(*)</span></font>、
+			有输出<font face="Liberation Serif, serif"><span lang="en-US">(+)</span></font>、可行性。
+						</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="143" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			衡量算法好坏的标准</p>
+		</td>
+		<td width="482" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
+			<font face="Liberation Serif, serif"><span lang="en-US">1</span></font>）正确性。算法应能够正确地解决求解问题
+						</p>
+			<p><font face="Liberation Serif, serif"><span lang="en-US">2</span></font>）可读性。算法应具有良好的可读性，以帮助人们理解。
+						</p>
+			<p><font face="Liberation Serif, serif"><span lang="en-US">3</span></font>）健壮性。输入非法数据时，算法能适当地做出反应或进行处理，而不会产生莫名其妙的输出结果。
+						</p>
+			<p><font face="Liberation Serif, serif"><span lang="en-US">4</span></font>）<b>高效率</b><font face="Liberation Serif, serif"><span lang="en-US"><b>(</b></span></font><font color="#c9211e"><b>时间复杂度</b></font><b>低
+			</b><font face="Liberation Serif, serif"><span lang="en-US"><b>)</b></span></font>与<b>低存储量</b><font face="Liberation Serif, serif"><span lang="en-US"><b>(</b></span></font><font color="#c9211e"><b>空间复杂度</b></font><b>低
+			</b><font face="Liberation Serif, serif"><span lang="en-US"><b>)</b></span></font>需求
+						</p>
+		</td>
+	</tr>
+</table>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p align="center" style="line-height: 100%; margin-bottom: 0cm"><b>算法知识与重点</b></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_abf6867ab8c60285.png" name="鍥惧儚19" align="bottom" width="643" height="389" border="0"/>
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm">时间复杂度、空间复杂度内容见上次课内容：</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><span lang="en-US"><a href="https://godblesschina.github.io/ds2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%BE%E7%BB%AA%E8%AE%BA.html">https://godblesschina.github.io/ds2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%BE%E7%BB%AA%E8%AE%BA.html</a></span></font></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p align="center" style="line-height: 100%; margin-bottom: 0cm"><u><font size="6" style="font-size: 24pt"><b>本次课内容
+线性表</b></font></u></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<table width="642" cellpadding="4" cellspacing="0">
+	<col width="226"/>
+
+	<col width="399"/>
+
+	<tr valign="top">
+		<td width="226" bgcolor="#ffff00" style="background: #ffff00; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			试试<font face="Liberation Serif, serif"><span lang="en-US">java</span></font>自带的数组、<font face="Liberation Serif, serif"><span lang="en-US">List</span></font>、<font face="Liberation Serif, serif"><span lang="en-US">ArrayList</span></font></p>
+		</td>
+		<td width="399" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0.1cm"><p>
+			了解引用、对象、地址、接口、抽象类、实现类、泛型等概念</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="226" bgcolor="#ffff00" style="background: #ffff00; border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			线性表定义、基本操作</p>
+		</td>
+		<td width="399" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0.1cm"><p>
+			定义</p>
+			<p>操作：初始化<font face="Liberation Serif, serif"><span lang="en-US">(</span></font>创建<font face="Liberation Serif, serif"><span lang="en-US">)</span></font>、插入数据、删除数据、修改数据、遍历、判断是否为空，求长度等等。</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="226" bgcolor="#ffff00" style="background: #ffff00; border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			线性表的存储<font face="Liberation Serif, serif"><span lang="en-US">(</span></font><b>物理结构</b><font face="Liberation Serif, serif"><span lang="en-US">)</span></font>一</p>
+		</td>
+		<td width="399" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0.1cm"><p>
+			<b>顺序存储</b>结构：</p>
+			<p><font face="Liberation Serif, serif"><span lang="en-US">1</span></font>地址连续</p>
+			<p><font face="Liberation Serif, serif"><span lang="en-US">2</span></font>使用数组可以实现</p>
+			<p><font face="Liberation Serif, serif"><span lang="en-US">3</span></font>前驱元素一定在后继元素的前面</p>
+			<p><font face="Liberation Serif, serif"><span lang="en-US">4
+			</span></font>每个数据元素的数据类型一样</p>
+			<p><font face="Liberation Serif, serif"><span lang="en-US">5
+			</span></font>每个数据元素所占的空间大小相同</p>
+			<p><font face="Liberation Serif, serif"><span lang="en-US">6 </span></font>查找很方便</p>
+			<p><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_e154d200841bf4d.gif" name="鍥惧儚24" align="left" width="400" height="228" border="0"/>
+<br/>
+
+			</p>
+		</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr valign="top">
+		<td width="226" bgcolor="#ffff00" style="background: #ffff00; border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
+			线性表的存储<font face="Liberation Serif, serif"><span lang="en-US">(</span></font><b>物理结构</b><font face="Liberation Serif, serif"><span lang="en-US">)</span></font>二</p>
+		</td>
+		<td width="399" style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0.1cm"><p>
+			<b>单</b>链表（单向链表、线性链表）、</p>
+			<p><b>双</b>链表（双向链表）、</p>
+			<p><b>循环</b><span style="font-weight: normal">链表 ：</span>循环单链表、循环双链表</p>
+			<p><br/>
+
+			</p>
+			<p><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_4014e8ee0e061d01.png" name="鍥惧儚25" width="400" height="84" border="0"/>
+</p>
+			<p><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_76d4fed8704a0f84.gif" name="鍥惧儚26" align="bottom" width="400" height="40" border="0"/>
+</p>
+			<p><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_facfe3f1f2e71007.gif" name="鍥惧儚27" align="bottom" width="400" height="166" border="0"/>
+</p>
+			<p><br/>
+
+			</p>
+			<p><img src="%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE%E9%93%BE%E8%A1%A8_html_28ea0a1d57088809.gif" name="鍥惧儚28" align="left" width="400" height="181" border="0"/>
+<br/>
+
+			</p>
+			<p><br/>
+
+			</p>
+			<p><br/>
+
+			</p>
+		</td>
+	</tr>
+</table>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm">一、试试<font face="Liberation Serif, serif"><span lang="en-US">java</span></font>自带的数组、<font face="Liberation Serif, serif"><span lang="en-US">List</span></font>、<font face="Liberation Serif, serif"><span lang="en-US">ArrayList</span></font>，了解对象、引用、地址、接口、抽象类、实现类、泛型等概念。</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm">二、线性表的存储结构之一<font color="#c9211e"><b>顺序存储结构</b></font>的定义、基本操作</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><span lang="en-US">1</span></font>）线性表的逻辑结构、
+线性表的存储结构之一<font color="#c9211e"><b>顺序存储结构</b></font>的定义</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><font face="Liberation Serif, serif"><span lang="en-US">2</span></font>）操作。</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm">三、线性表的存储结构之一<font color="#c9211e"><b>单链存储结构</b></font>的定义、基本操作</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>
