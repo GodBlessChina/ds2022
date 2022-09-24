@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三次课单链表</title>
+</head>
+<body>
+    <pre>
+        线性表的物理存储实现方式有4种：
+        1 顺序表
+        2 单链表
+        3 双链表
+        4 循环链表
+        ====================================
+        内容：
+        1 问题：
+        1.1 在Java中，baJie和peiQi是对象吗？
+        1.2 s1,s2,s3,s4的内存地址是否一样
+        Pig baJie = new Pig();
+        Pig peiQi = new Pig();
+        String s1 = "hello";
+        String s2 = "hello";
+        String s3 = new String("hello");
+        String s4 = new String("hello");
+        <a href="JVM内存分配图.png">JVM内存分配图</a>
+        https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html
+        https://www.javatpoint.com/memory-management-in-java
+        https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html <a href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html">这是官方文档，JVM内存分配见2.5节</a>
+        <a href="JVM内存分配.txt">这是从上面链接中2.5节复制的内容</a>
+        https://docs.oracle.com/javase/specs/index.html java se规范
+        
+        2 对象绑定：
+        Class Person{
+            private String name;
+            private Person son;
+            getter & setter...
+        }
+        创建多个Person对象，通过属性son串联成一个单链表。
+        金日成->金正恩->金小胖->小小胖
+        
+        3 如何循环获取某个节点的值
+            * if 头节点：
+            * if 头节点的下一个节点
+            * if 头节点的下一个节点的下一个节点
+            ...
+            将上述代码换成for
+        4 单链表原理：<a href="线性表之单链表示意图.png">线性表之单链表示意图.png</a>
+            * 单链表的逻辑结构
+            * 单链表的物理结构
+            * 单链表的操作：
+                ** 初始化，在构造函数中初始化头节点
+                ** inset() / add() 插入数据，默认添加单链表结尾
+                ** insert(int index) / add(int index) 插入数据，指定位置
+                ** remove() remove(int index) 删除数据，指定位置和默认删除结尾
+                ** clear() 清空链表
+                ** isEmpty() 判断是否为空
+                ** size()
+        5 代码实现：<a href="单链表未完成.7z">单链表未完成.7z</a>
+    </pre>
+</body>
+</html>
