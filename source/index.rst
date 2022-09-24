@@ -9,6 +9,9 @@
 `第一次课绪论 <https://godblesschina.github.io/ds2022/第一次课绪论.html>`_
 
 
+`第三次课单链表 <https://godblesschina.github.io/ds2022/第三次课单链表.html>`_
+
+
 `第二次课链表 <https://godblesschina.github.io/ds2022/第二次课链表.html>`_
 
 
