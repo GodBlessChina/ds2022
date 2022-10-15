@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>串</title>
+
+    <style>
+        note{
+            font-size: larger;
+            color: rebeccapurple;
+        }
+        todo{
+            font-size: larger;
+            color: blue;
+        }
+        log{
+            font-size: smaller;
+            color: burlywood;
+        }
+        .b{
+            border:solid 5px chocolate;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        java{
+            font-style: italic;
+            color: cadetblue;
+        }
+        a{
+            font-size: larger;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<pre>
+<h1>
+===============================
+<t>
+串
+</t>
+===============================
+</h1>
+<div class="b" >
+<a target="_blank" href="https://fanyi.baidu.com/#en/zh/string">string</a>
+    英 [strɪŋ] 美 [strɪŋ]
+
+    n.
+    一串;线;细绳;带子;一系列;一连串;一批;字符串;弦;（管弦乐团的）弦乐器，弦乐器组;特定条件（或限制）
+
+    vt.
+    悬挂;系;扎;用线(或细绳等)串，把…连在一起;给…装弦
+
+    adj.
+    由弦乐器组成的;弦乐器的;线织的;线的
+</div>
+</pre>
+
+<!-- <div class="mw-highlight mw-highlight-lang-cpp mw-content-ltr" dir="ltr"><pre><span></span><span class="k">class</span> <span class="nc">string</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+    <span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">length</span><span class="p">;</span><span class="w"></span>
+    <span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">text</span><span class="p">;</span><span class="w"></span>
+    <span class="p">};</span><span class="w"></span>
+    </pre></div> -->
+<pre>
+
+<div class="b">
+学习数据结构时，从3个方面进行：
+1 逻辑结构
+2 功能(运算)
+3 物理结构
+</div>
+
+<div class="b">
+1 串的逻辑结构:
+<img src="string-in-data-structure.webp" width="1000dp">
+</div>
+
+<div class="b">
+2 串的运算：
+    参考Java的String类中的API。
+    int length(); // 获取字符串的长度
+    boolean isEmpty(); // 判断字符串是否为空
+    char charAt(int index); // 获取指定位置的字符
+    IString toUpperCase();  // 将字符串转换成大写
+    IString toLowerCase();  // 将字符串转换成小写
+    IString substring(int beginIndex, int endIndex); // 截取字符串
+    boolean contains(IString subString);// 判断是否包含子串
+        boolean containsBy<todo>BF</todo>(IString subString); // 判断是否包含字符串,BF算法：Brute Force 暴力算法。
+        * boolean containsBy<todo>KMP</todo>(IString subString); // KMP算法判断是否包含.KMP:Knuth–Morris–Pratt algorithm。
+    boolean startsWith(IString str); // 判断是否以某个字符串开头
+    boolean endsWith(IString str); // 判断是否以某个字符串结尾
+    
+    
+    ** IString concat(IString str); // 连接两个字符串
+    <note>上面的api为什么不设计成:
+        IString s1 = "hello";
+        IString s2 = "world";
+        IString s3 = s1 + s2; // 运算符重载 <todo>Java[目前]不支持运算符重载。</todo> 
+        // 那为什么Java自带的String类可以+？
+        // javap -verbose A.class 查看字节码。 StringConcatFactory concatenate
+    </note> 
+    ** equal(IString str); // 重【写】Object中的equal，比较内容。<a target="_blank" href="JVM内存分配图.png">JVM内存分配图</a> <a target="_blank" href="JVM内存分配.txt">JVM内存分配txt</a>
+    <todo>
+        equal和==的区别 ： equal比较的是value;
+        ==比较的是栈内存中引用的地址，用System.identityHashCode(object)查看，
+                并不是object.hashCode();
+    </todo>
+    <div class="b">
+        <java>
+            class MyString implements IString{
+                private char []arr;
+    
+                public IString(char[] arr){
+                    this.arr = arr;
+                }
+    
+                //重【写】Object中的equal，比较内容。
+                @Override
+                public boolean equals(Object o) {
+                    if (this == o) return true;
+                    if (o == null || getClass() != o.getClass()) return false;
+                    IString iString = (IString) o;
+                    return Arrays.equals(arr, iString.arr);
+                }
+            
+                @Override
+                public int hashCode() {
+                    return Arrays.hashCode(arr);
+                }
+            }
+            
+        </java>
+        <div class="b">
+            <java>
+                public static void main(String[] args) {
+                    char [] arr1 = {'a','b'};
+                    char [] arr2 = {'a','b'};
+            
+                    IString s1 = new MyString(arr1);
+                    IString s2 = new MyString(arr2);
+    
+                    System.out.println(s1==s2); // false
+    
+                    <todo>// true。 如果不重写MyString中的equals,打印结果则为false</todo>
+                    System.out.println(s1.equals(s2)); 
+                }
+            </java>
+        </div>
+    </div>
+        <div class="b">
+
+        <todo>
+        String s1= "hello";
+        String s2 = new String("hello");
+        String s3= "hello";
+
+
+        System.out.println(Integer.toHexString(s1.hashCode()));<log>// 5e918d2</log>
+        System.out.println(Integer.toHexString(s2.hashCode()));<log>// 5e918d2</log>
+        System.out.println(Integer.toHexString(s3.hashCode()));<log>// 5e918d2</log>
+        System.out.println("-----------------------------------");
+        System.out.println(System.identityHashCode(s1));<log>// 1915910607</log>
+        System.out.println(System.identityHashCode(s2));<log>// 284720968</log>
+        System.out.println(System.identityHashCode(s3));<log>// 1915910607</log>
+        System.out.println("-----------------------------------");
+        System.out.println(s1.equals(s2));<log>// true or false?</log>
+        System.out.println(s2.equals(s3));<log>// </log>
+        System.out.println(s1.equals(s3));<log>// </log>
+        
+        System.out.println(s1==s3); <log>// </log>
+
+        System.out.println(s1==s2);<log>// </log>
+        System.out.println(s3==s2);<log>// </log>
+        </todo>
+            <log>
+            5e918d2
+            5e918d2
+            5e918d2
+            -----------------------------------
+            1915910607
+            284720968
+            1915910607
+            </log>
+            <log>
+            -----------------------------------
+            String s01 = "he";
+            String s02 = "llo";
+            String s4 = s01+s02;
+            // s1、s2与s4用equals和==比较的结果是什么？
+            </log>
+        </div>
+    </todo>
+</div>
+
+<div class="b">
+3 物理结构：
+    <div class="b" style="background-color:antiquewhite;">
+    * 顺序串
+        char[]
+    </div>
+    <div class="b">
+    * 链串
+        class Node:
+            char data;
+            Node nextNode;
+    </div>
+</div>
+</pre>
+
+<div>
+<iframe src="https://cmps-people.ok.ubc.ca/ylucet/DS/KnuthMorrisPratt.html" style="width:1500px; height: 1000px;"></iframe>
+</div>
+</body>
+</html>
