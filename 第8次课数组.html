@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,9 @@
     <title>第8次课数组/矩阵/稀疏矩阵</title>
     <link rel="stylesheet" href="s.css">
 </head>
+
 <body>
-<pre>
+    <pre>
 <h1>
 ===============================
 数组/矩阵/稀疏矩阵
@@ -73,6 +75,7 @@
 <note>矩阵</note>。矩阵是一个二维数组。
 1 对称矩阵(对称轴上的数据不一定相同):
     <img src="对称矩阵.png">
+    <img src="对称矩阵2.png">
 2 三角矩阵
     <img src="三角矩阵.png">
 3 对角矩阵
@@ -94,7 +97,7 @@
 
     <img src="稀疏矩阵2.png" alt="">
     <log>計算有限元問題時得到的稀疏矩陣。非零元素用黑點表示。</log>
-    
+
     稀疏矩阵的压缩方式：
         1 三元组/三元组顺序表。三元组使用 行号、列号、值 这三个信息来保存非零元素。
         2 十字链表。非零元素的位置或个数经常发生变化时，不宜采用三元组顺序表存储，而应该采用链表存储，十字链表使用一个节点来表示一个非零元素。
@@ -104,11 +107,11 @@
 
 <div class="b">
 矩阵的乘法(叉乘, C行列=sum(A行xB列))：
+<!-- https://www.cnblogs.com/Wu-Ling/p/16553690.html -->
 <object data="矩阵乘法A.svg" type="image/svg+xml"></object> 
 <object data="矩阵乘法B.svg" type="image/svg+xml"></object> 
 <object data="矩阵乘法AB.svg" type="image/svg+xml"></object> 
 </div>
-
 
 
 <div class="b">
@@ -177,6 +180,31 @@
    
 </java>
 </div>
+
+<div class="b" style="background-color:bisque;">
+作业：
+    1 编写Java代码完成矩阵的转置。
+    <div class="b" style="background-color:antiquewhite;">
+            1   2   3     
+    arr=    4   5   6   
+            7   8   9          
+            10  11  12
+    </div>
+    
+    2 编写Java代码，求两个矩阵的乘积：
+    <div class="b" style="background-color:antiquewhite;">
+            1   2   3           13  14  15  16
+    arr1=   4   5   6   arr2 =  17  18  19  20
+            7   8   9           21  22  23  24
+            10  11  12
+    </div>
+
+</div>
+<div class="b">
+<note>矩阵在线计算：</note>
+<iframe src="https://matrix.reshish.com/zh/multiplication.php" style="width:1300px; height: 2000px;" frameborder="0"></iframe>
+</div>
 </pre>
 </body>
+
 </html>
