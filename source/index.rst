@@ -27,3 +27,9 @@
 `第7次课串 <https://godblesschina.github.io/ds2022/第7次课串.html>`_
 
 
+`第8次课数组 <https://godblesschina.github.io/ds2022/第8次课数组.html>`_
+
+
+`课时 <https://godblesschina.github.io/ds2022/课时.html>`_
+
+
