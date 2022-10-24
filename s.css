@@ -1,12 +1,15 @@
 note{
+    /* 注意事项 */
     font-size: larger;
     color: rebeccapurple;
 }
 todo{
+    /* 代码 todo */
     font-size: larger;
     color: blue;
 }
 log{
+    /* 代码注释 日志等 */
     font-size: smaller;
     color: burlywood;
 }
@@ -17,10 +20,12 @@ log{
     padding-right: 10px;
 }
 java{
+    /* java代码 */
     font-style: italic;
     color: cadetblue;
 }
 a{
+    /* a标签 */
     font-size: larger;
     font-style: italic;
 }
