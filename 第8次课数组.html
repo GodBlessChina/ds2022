@@ -118,6 +118,22 @@
 一维数组的基本操作：
     traverse、insertion、delete、search、update
     重写：toString、equals
+<div class="b">
+<java>
+    Pig baJie = new Pig();
+    baJie.name = "猪八戒";
+    System.out.println(baJie); // 打印的结果是Pig@23a34345，而跟"猪八戒"这个字符串没关系
+    为了打印baJie时输出"猪八戒"，可以重写Pig类中的toString函数();
+
+    但是:
+    int arr[] = {1,2,3,4,5};
+    System.out.println(arr); // 打印的结果是[I@12a4512，而不是 1 2 3 4 5
+    <note>
+    Note:由于java不支持运算符重载，所以无法重写int []的toString()
+    所以只能通过封装int[]成一个类OneDimensionalArray,然后重写toString()来解决这个问题。
+    </note>
+</java>
+</div>
 <java>
     import java.util.Arrays;
 
