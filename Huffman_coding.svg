@@ -62,8 +62,8 @@
  <circle cx="0" cy="0" r="99999" fill="#ffffff"/>
  <g font-family="Helvetica,Arial,sans-serif" font-size="9" text-anchor="middle"
     stroke-width="0.5" stroke="none" fill="#000000">
-	<text x="-100" y="3ex" font-weight="bold"><tspan fill="#0066ff">教师：周靖轩</tspan></text>
-	<text x="-100" y="0.2ex" font-weight="bold"><tspan fill="#0066ff">霍夫曼编码演示</tspan></text>
+	<text x="100" y="13ex" font-weight="bold"><tspan fill="#cc00ff">教师：周靖轩</tspan></text>
+	<text x="100" y="10ex" font-weight="bold"><tspan fill="#51232f">霍夫曼编码演示</tspan></text>
   <g transform="translate(0,-20)">
    <text x="-40" y="0.7ex" font-weight="bold">1.</text>
    <text x="-30" y="0.7ex" font-weight="bold" text-anchor="start"><tspan>"</tspan
