@@ -1,3 +1,7 @@
+*{
+    /* pre-wrap 自动换行，并且在浏览器缩小宽度时，文字也会自动换行 */
+    white-space: pre-wrap;
+}
 note{
     /* 注意事项 */
     font-size: larger;

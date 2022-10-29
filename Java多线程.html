@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java多线程和synchronized的用法</title>
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+<note>Java多线程和synchronized</note>
+======================================================
+
+<div class="b">
+    <java>
+/**
+* synchronized 关键字，使得多个线程修改同一个变量时，确保一个线程修改完成后，
+* 另一个线程再执行修改。
+* 如果一个线程需要修改这个变量10000次，另一个线程也需要修改这个变量10000次，
+* 那么，其中一个先修改这个变量10000次后，另一个再开始修改。
+* 【但是】，线程中其它代码交替执行，不论这行代码位于修改变量之前，还是值后。
+* <note style="border:solid 1px; background-color: antiquewhite;">下列代码中【代码1】【代码2】会交替执行，但是不会出现【代码3】和【代码4】。</note>
+* <note style="border:solid 1px; background-color: antiquewhite;">如果去掉某个函数上的synchronized关键字，就会出现【代码3】和【代码4】</note>
+*/
+
+class Counter{
+
+    private int count = 0;
+
+    // 每次++ 10000次
+    public synchronized void add(){
+        for (int i = 0; i < 10000; i++) {
+            count++;
+            //System.out.println("t1");// 代码1
+        }
+    }
+
+    // 每次-- 10000次
+    public synchronized void minus(){
+        for (int i = 0; i < 10000; i++) {
+            count--;
+            //System.out.println("t2......................");// 代码2
+        }
+    }
+
+    public synchronized int get(){
+        return count;
+    }
+}
+
+
+public class SynchronizedStudy {
+    public static void main(String[] args) {
+        for (int i = 0; i < 1000; i++) {
+            Counter c1 = new Counter();
+            new Thread(){
+                @Override
+                public void run() {
+                    c1.add(); // 这个线程负责+，线程执行完后count++10000
+                }
+            }.start();
+            new Thread(){
+                @Override
+                public void run() {
+                    c1.minus();// 这个线程负责-，线程执行完后count--10000
+                }
+            }.start();
+
+            new Thread(){
+                @Override
+                public void run() {
+                    int i1 = c1.get();// 这个线程负责获取count，结果应该为 0 或 10000 或 -10000
+                    if (i1!=0 && i1!=-10000 && i1!=10000){
+                        System.out.println(i1);// 代码3
+                        //System.exit(0); // 代码4
+                    }
+                }
+            }.start();
+        }
+    }
+}
+
+    </java>
+</div>
+</body>
+</html>
