@@ -6,6 +6,9 @@
 数据结构和算法
 ==============================
 
+`Java多线程 <https://godblesschina.github.io/ds2022/Java多线程.html>`_
+
+
 `第1次课绪论 <https://godblesschina.github.io/ds2022/第1次课绪论.html>`_
 
 
@@ -30,6 +33,12 @@
 `第8次课数组 <https://godblesschina.github.io/ds2022/第8次课数组.html>`_
 
 
+`第9次课树 <https://godblesschina.github.io/ds2022/第9次课树.html>`_
+
+
 `课时 <https://godblesschina.github.io/ds2022/课时.html>`_
+
+
+`霍夫曼编码演示 <https://godblesschina.github.io/ds2022/霍夫曼编码演示.html>`_
 
 
