@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第10次课图</title>
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+<pre>
+<note>
+======================================
+图
+======================================
+</note>
+
+<div class="b">
+<div class="bc">图的基本概念和几种特殊的图</div>
+<div class="bc">
+之前学过的树逻辑结构是这样的：
+<img src="tree/什么是树.png" alt="">
+</div>
+
+图逻辑结构是这样的:
+<img src="graph/图的定义.png" alt="">
+
+图逻辑结构的应用:
+<img src="graph/图逻辑结构的应用.png" alt="">
+
+<img src="graph/微信好友和微博粉丝.png" alt="">
+
+<img src="graph/有向图和无向图.png" alt="">
+
+<img src="graph/简单图和多重图.png" alt="">
+<div class="bc">微信好友关系和微博粉丝关系都可以用简单图完成，不需要处理自己添加自己为好友/粉丝的情况</div>
+
+<div class="bc">思考：如何判断一个人是否是交友达人/微博大V?</div>
+通过计算某个结点的边数/弧尾数
+<img src="graph/交友达人和微博大V.png" alt="">
+
+那么，我们可以通过"度"这个术语表示上面的概念:
+<img src="graph/顶点的度入度和出度.png" alt="">
+
+顶点-顶点的关系描述：
+<img src="graph/顶点与顶点的关系描述.png" alt="">
+
+<div class="bc">连通图和强连通图性质：</div>
+<img src="graph/连通图强连通图.png" alt="">
+
+<div class="bc">子图和生成子图</div>
+<img src="graph/子图和生成子图.png" alt="">
+
+<div class="bc">连通分量</div>
+<div class="b">
+    <img src="graph/连通分量.png" alt="">
+    <img src="graph/连通图之全国铁路线路示意图.png" alt="">
+
+<div class="bc">强连通分量</div>
+<img src="graph/强连通分量.png" alt="">
+
+<div class="bc">无向图的生成树</div>
+<img src="graph/无向图的生成树.png" alt="">
+
+<div class="b">
+<div class="bc">
+生成森林:
+1 先得到连通分量
+2 再得到每个连通分量的生成树
+</div>
+<img src="graph/生成森林.png" alt="">
+</div>
+</div>
+
+<div class="bc">
+生成树的应用场景，下列图中每个结点代表一个地点，修路使得每个地点连通，且成本最小：
+<img src="graph/修路1.png" alt="">
+
+<div class="bc">
+如果每条路的成本不一样呢？涉及到这些概念:
+边的权、带权图/网</div>
+<img src="graph/带权路径长度.png" alt="">
+<img src="graph/带权路径长度2.png" alt="">
+</div>
+
+<div class="bc">特殊的图：有向完全图、无向完全图、稀疏图、稠密图、树</div>
+<img src="graph/无向完全图有向完全图.png" alt="">
+<div class="b">
+    <img src="graph/稀疏图稠密图.png" alt="">
+    <img src="graph/树是一种特殊的图.png" alt="">
+</div>
+
+
+
+
+</div>
+
+
+<div class="b">
+<div class="bc">图的存储</div>
+<div class="b">
+邻接矩阵法
+<img src="graph/图的存储之邻接矩阵法.png" alt="">
+</div>
+</div>
+
+</pre>
+</body>
+</html>

@@ -23,6 +23,13 @@ log{
     padding-left: 10px;
     padding-right: 10px;
 }
+.bc{
+    /* div变成一个边框 有背景 */
+    border:solid 5px chocolate;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: antiquewhite;
+}
 java{
     /* java代码 */
     font-style: italic;
