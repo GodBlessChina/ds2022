@@ -9,11 +9,9 @@
 </head>
 <body>
 <pre>
-<note>
-======================================
-图
-======================================
-</note>
+<div class="bcc3">
+<note style="font-size: 100px;">图</note>
+</div>
 
 <div class="b">
 <div class="bc">图的基本概念和几种特殊的图</div>
@@ -77,7 +75,7 @@
 <img src="graph/修路1.png" alt="">
 
 <div class="bc">
-如果每条路的成本不一样呢？涉及到这些概念:
+如果每条路的成本不一样呢？这个问题涉及到以下这些概念:
 边的权、带权图/网</div>
 <img src="graph/带权路径长度.png" alt="">
 <img src="graph/带权路径长度2.png" alt="">
@@ -95,14 +93,211 @@
 
 </div>
 
+<!-- 分割线 -->
+<div class="bcc6">
+<note>以上是图的逻辑结构，概念很多，能不能记住无所谓，佛系一点，开心最重要😄</note>
+<p>我是分割线，至于我为什么这么高，是为了告诉你，前后的内容重点不一样</p>
+<note><fb>以下内容是图的物理结构</fb></note>
+</div>
+
+<!-- 图的存储内容 start -->
+<div class="b">
+<div class="bc">
+图的存储(图的物理结构，也就是图在内存中是如何储存的):
+1 邻接矩阵
+2 邻接表
+3 十字链表
+4 邻接多重表
+</div>
+<div class="b">
+邻接矩阵法(<a href="graph/邻接矩阵表示无向图和有向图.xlsx" target="_blank">点击此处下载excel演示文件</a>)
+
+<fb>邻接矩阵法存储无向图和有向图(不带权)</fb>
+<img src="graph/图的存储之邻接矩阵法.png" alt="">
+
+<fb>邻接矩阵法存储带权图</fb>
+<img src="graph/邻接矩阵法存储带权图(网).png" alt="">
+<div class="bc">
+思考：如何通过邻接矩阵求：
+    1 无向图中每个结点的度
+    2 有向图中每个结点的出度、入度和度
+</div>
 
 <div class="b">
-<div class="bc">图的存储</div>
+<fb>还记得矩阵的压缩存储吗？上面的矩阵可以进行压缩存储吗？</fb>
+<img src="graph/对称矩阵的压缩存储.png" >
+</div>
+
+<fb>
+    两个矩阵的乘法还记得吗?
+    如果把图g的邻接矩阵a进行平方操作,也就是<note>a²=a*a</note>，结果是什么含义呢？
+    <note>看下图【邻接矩阵法的性质】:</note>
+</fb>
+<img src="graph/邻接矩阵法的性质.png" >
+<div class="bc">
+    <note>以上关于邻接矩阵的性质，严谨的数学证明可以参考《<fb>离散数学</fb>》中的图论</note>
+</div>
+
+<!-- 邻接矩阵法 end -->
+</div>
+
+
 <div class="b">
-邻接矩阵法
-<img src="graph/图的存储之邻接矩阵法.png" alt="">
+图的物理存储之<fb>邻接表法</fb>：
+<d class="bcc"><fb>邻接矩阵的缺点</fb>：空间复杂度高，顶点数量为n的图，需要用一个一维数组存储结点，用一个二维矩阵来存储路径，<fb>空间复杂度n²</fb>。</d>
+
+邻接表法示意图:
+<img src="graph/邻接表法.png" >
+<div class="bc">
+<note>
+邻接表法表示无向图时，有冗余：A->B 和 B->A是同一条边，但是存储了两次。
+思考：如何通过邻接表法求无向图结点的度、图的度;有向图的出度、<fb>入度</fb>(求入度比较麻烦，需要遍历整个邻接表，这是邻接表法的缺点)等
+</note>
 </div>
+
+<!-- 邻接表法 end -->
 </div>
+
+<div class="d">
+邻接矩阵和邻接表对比
+<img src="graph/邻接矩阵和邻接表对比.png" >
+</div>
+
+<div class="bc">
+<note>
+图的其它存储方式还有：<fb>十字链表、邻接多重表</fb>。教材没有，可以自行查阅相关资料。
+</note>
+</div>
+<!-- 图的存储内容 end -->
+</div>
+
+
+<div class="bcc6">
+    <note>以上是图的物理存储</note>
+我是分割线，至于我为什么这么高，是为了告诉你，前后的内容重点不一样
+<note>以下是图的遍历</note>
+</div>
+
+<!-- <div class="b">
+    <img src="graph/图的基本操作.png" >
+</div> -->
+
+<div class="b">
+树的遍历:
+1 广度优先遍历 BFS
+    找到与当前结点相连的所有结点，然后再继续下一层。
+2 深度优先遍历 DFS
+
+<div class="b">
+<div class="bc">广度优先遍历</div>
+<img src="graph/图的广度优先遍历.png" alt="">
+<div class="bc">
+思考：上图中，遍历到1、6时，如果继续遍历，会发现6的相邻结点有2、3、7，但是2已经遍历过了，如何处理？
+可以在代码中，给已经遍历过的结点加一个<fb>标记</fb>，比如 boolean visited=true;
+</div>
+
+<div class="b">
+    <div class="bc">
+        广度优先遍历序列:
+    </div>
+    
+    <img src="graph/广度优先遍历序列.png" alt="">
+
+    <div class="b">
+        由于图的物理存储可以采用邻接矩阵和邻接表等方式，并且<fb>邻接表的存储顺序不唯一</fb>，所以
+        图的广度优先遍历序列的具有可变性:
+    </div>
+    <img src="graph/图的广度优先遍历序列的可变性.png" alt="">
+</div>
+
+<!-- 广度优先遍历 end -->
+</div>
+
+<div class="b">
+
+<div class="bc">
+    图的深度优先遍历:
+</div>
+<img src="graph/图的深度优先遍历.png" alt="">
+</div>
+
+<div class="b">
+    <div class="bc">非连通图[见下图]该如何遍历呢?</div>
+    <img src="graph/图的遍历之非连通图的遍历方法.png" alt="">
+</div>
+
+<!-- 图的遍历 end -->
+</div>
+
+
+<div class="bcc6">
+<note>前面是图的遍历</note>
+我是分割线，至于我为什么这么高，是为了告诉你，前后的内容重点不一样
+<note>下面是图的最小生成树(最小代价树)</note>
+</div>
+
+
+<div class="b">
+问题：旅游需要经过武汉、西安、北京、南京、香港、台北、呼和浩特...，如何规划行程，使得成本(经济、时间、路程)最小，又能去到所有城市。
+<div class="bc">最小生成树(最小代价树)</div>
+
+<fb>看如下问题：如何修路最节省成本</fb>
+<img src="graph/最小生成树1.png">
+
+<fb>可能的方案:</fb>
+<img src="graph/最小生成树2.png">
+
+<fb>那如何得到代价最小的修路方案呢? Prim算法和Kruskal算法。</fb>
+<note>
+首先需要注意：
+    只有连通图才能产生生成树，非连通图只能产生生成森林。比如:
+    <img src="graph/生成森林2.png">
+</note>
+
+<fb>1 Prim算法(普利姆算法)</fb>:从点找最小边
+<img src="graph/Prim算法普利姆算法.png" alt="">
+
+<fb>2 Kruskal(克鲁斯卡尔算法)</fb>:从最小边找点
+<img src="graph/Kruskal算法克鲁斯卡尔算法.png" alt="">
+
+<!-- 最小生成树 end -->
+</div>
+
+<div class="bbc6">
+    <note>上面是图的最小生成树</note>
+    我是分割线，至于我为什么这么高，是为了告诉你，前后的内容重点不一样
+    <note>下面是图的最短路径</note>
+</div>
+
+
+<div class="b">
+问题：旅游需要从武汉到纽约，如何规划行程，使得成本最低。
+<div class="bc">最短路径问题</div>
+<img src="graph/最短路径问题.png" alt="">
+
+<fb>1 BFS(广度优先算法)求无权图的单源最短路径</fb>
+<img src="graph/BFS求最短路径.png" alt="">
+
+<fb>2 Dijkstra迪杰斯特拉算法 求带权图、无权图的单源最短路径</fb>
+<img src="graph/迪杰斯特拉大师.png" alt="">
+
+<div class="b">
+    <fb>迪杰斯特拉算法流程图:</fb>
+    <img src="graph/迪杰斯特拉算法求最短路径.png">
+</div>
+
+<div class="b">
+    <div class="bc">带权图，但是权值有负数，迪杰斯特拉算法<fb>不适用</fb></div>
+    <img src="graph/迪杰斯特拉算法不适用于带负权值的带权图.png">
+    <div class="b">
+    带负权的带权图，场景:跑毒
+    <img src="graph/跑毒.png">
+    </div>
+</div>
+
+<!-- 最短路径 end -->
+</div>
+
 
 </pre>
 </body>

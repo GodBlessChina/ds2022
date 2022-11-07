@@ -30,6 +30,41 @@ log{
     padding-right: 10px;
     background-color: antiquewhite;
 }
+.bcc{
+    /* div变成一个边框 有背景 内容居中 */
+    border:solid 5px chocolate;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center; /*上下居中 */
+    justify-content: center;/*水平居中 */
+}
+
+.bcc3{
+    /* div变成一个边框 有背景 内容居中 高度 */
+    border:solid 5px chocolate;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: antiquewhite;
+    display: flex;
+    height: 300px; 
+    align-items: center; /*上下居中 */
+    justify-content: center;/*水平居中 */
+}
+
+.bcc6{
+    /* div变成一个边框 有背景 内容居中 高度 */
+    border:solid 5px chocolate;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: antiquewhite;
+    display: flex;
+    height: 600px; 
+    align-items: center; /*上下居中 */
+    justify-content: center;/*水平居中 */
+}
+
 java{
     /* java代码 */
     font-style: italic;
@@ -39,4 +74,9 @@ a{
     /* a标签 */
     font-size: larger;
     font-style: italic;
+}
+
+fb{
+    font-display:initial;
+    background-color:yellow;
 }
