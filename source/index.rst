@@ -12,6 +12,9 @@
 `第10次课图 <https://godblesschina.github.io/ds2022/第10次课图.html>`_
 
 
+`第11次课查找(区块链专业) <https://godblesschina.github.io/ds2022/第11次课查找(区块链专业).html>`_
+
+
 `第1次课绪论 <https://godblesschina.github.io/ds2022/第1次课绪论.html>`_
 
 
