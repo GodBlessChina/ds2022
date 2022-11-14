@@ -23,6 +23,12 @@ log{
     padding-left: 10px;
     padding-right: 10px;
 }
+.bgy{
+    /* div变成一个边框 边框颜色绿色 */
+    border:solid 5px greenyellow;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .bc{
     /* div变成一个边框 有背景 */
     border:solid 5px chocolate;
@@ -76,7 +82,8 @@ a{
     font-style: italic;
 }
 
+/* 文字斜体，背景yellow */
 fb{
-    font-display:initial;
+    font-style: italic;
     background-color:yellow;
 }

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第11次课查找(区块链专业)</title>
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+<pre>
+<div class="bcc">查找</div>
+
+<div class="bgy">
+    <div class="bc">查找的基本概念：</div>
+    <div class="b">
+    <img src="search/查找知识总览1.png">
+    <img src="search/查找基本概念1.png">
+    <div class="bc">查找表不一定是一张表，查找表可以是一个"图"结构，也可以是"树"、"数组"等任意一种形式的数据结构，也就是说"查找表"不是一种具体的数据结构，而是一种统称，用于指代被我们查找的数据结构。比如即时微信的好友关系"图":</div>
+    <img src="search/查找基本概念2.png" alt="">
+</div>
+
+<div class="b">
+<div class="bc">查找表【按照对其进行的操作】分两种：静态查找表、动态查找表</div>
+<img src="search/对查找表的常见操作.png">
+</div>
+
+
+<div class="b">
+    <div class="bc">查找算法的评价指标:以不同的数据结构作为查找表，查找算法的性能是不同的，如何评价查找算法的性能呢？</div>
+<img src="search/查找算法的评价指标平均查找长度.png" alt="">
+
+<fb>注意：平均查找长度的计算结果分为：查找成功、查找失败两种情况</fb>
+
+<div class="b">
+    查找<fb>成功</fb>时的ASL
+    <img src="search/平局查找长度查找成功时的结果1.png">
+<a href="search/平局查找长度查找成功时的结果2.png" target="_blank">点击这里查看答案【这个题会考的】</a>
+</div>
+
+<div class="b">
+    查找<fb>失败</fb>时的ASL
+    <img src="search/平局查找长度查找失败时的结果1.png">
+<a href="search/平局查找长度查找失败时的结果2.png" target="_blank">点击这里查看答案【这个题会考吗，不晓得】</a>
+</div>
+<!-- 平均查找长度ASL end -->
+</div>
+
+<div class="b">
+<img src="search/查找的概念知识回顾与重点.png">
+</div>
+<!-- 概念 end -->
+</div>
+
+
+<!-- 第一个查找算法 顺序查找 -->
+<div class="bgy">
+<div class="bc">查找算法之<fb>顺序查找</fb></div>
+
+<img src="search/顺序查找算法的知识总览.png"/>
+
+<!-- 顺序查找算法的思想 -->
+<div class="b">
+顺序查找算法的思想:
+<img src="search/顺序查找算法的思想.png">
+<!-- 顺序查找算法的思想 end -->
+</div>
+
+
+<div class="b">
+顺序查找<fb>算法实现</fb>：有哨兵、无哨兵
+<div class="b">
+<div class="bc">无哨兵</div>
+<fb>查找成功的情况</fb>
+<img src="search/顺序查找成功.png" alt="">
+
+<fb>查找失败的情况</fb>
+<img src="search/顺序查找失败.png" alt="">
+</div>
+
+<div class="b">
+    <div class="bc">有哨兵 <fb>有哨兵时，for循环中不需要判断数组角标是否越界，理论上减少了代码运行时间</fb></div>
+    <fb>查找成功的情况</fb>
+    <img src="search/顺序查找有哨兵成功.png" alt="">
+    
+    <fb>查找失败的情况</fb>
+    <img src="search/顺序查找有哨兵失败.png" alt="">
+    </div>
+    
+</div>
+
+<div class="b">
+<div class="b">顺序查找的ASL以及<fb>优化</fb></div>
+<img src="search/顺序查找的平均查找长度.png" alt="">
+
+<div class="bgy">
+    <div class="bc">优化</div>
+    <div class="b">
+        <fb>顺序查找的优化【对有序表】</fb>
+        <img src="search/顺序查找的优化对有序表.png">
+        
+        <fb>顺序查找的优化:用查找判定树分析ASL</fb>
+        <img src="search/用查找判定树分析ASL.png" alt="">
+    </div>
+    
+    <div class="b">
+        <fb>顺序查找的优化（被查概率不相等）</fb>
+        <img src="search/顺序查找的优化被查概率不相等.png">
+    </div>
+</div>
+<fb>顺序查找的知识点</fb>
+<img src="search/顺序查找的知识点.png">
+<!-- 顺序查找 end -->
+</div>
+
+
+<div class="b">
+<div class="bc">折半查找</div>
+<fb>折半查找知识总览</fb>
+<img src="search/折半查找知识总览.png" alt="">
+
+<fb>折半查找算法的思想</fb>
+<img src="search/折半查找算法的思想.png" alt="">
+
+<fb>折半查找算法的思想查找成功</fb>
+<img src="search/折半查找算法的思想查找成功.png" alt="">
+
+<fb>折半查找算法的实现</fb>
+<img src="search/折半查找算法的实现.png" alt="">
+
+
+<fb>折半查找效率分析</fb>
+<img src="search/折半查找效率分析.png" alt="">
+
+
+<fb>折半查找判定树的构造</fb>
+<img src="search/折半查找判定树的构造.png" alt="">
+
+
+<fb>折半查找知识点</fb>
+<img src="search/折半查找知识点.png" alt="">
+
+
+<fb>折半查找一定比顺序查找快吗???</fb>
+<img src="search/折半查找一定比顺序查找快吗.png" alt="">
+<!-- 折半查找 end -->
+</div>
+
+
+<div class="b">
+<div class="bc">分块查找</div>
+<fb>分块查找知识总览</fb>
+<img src="search/分块查找知识总览.png" alt="">
+
+
+<fb>分块查找算法的思想</fb>
+<img src="search/分块查找算法的思想.png" alt="">
+
+<div class="b">思考: 如果查找的目标是 <fb>29</fb> 呢?</div>
+
+<fb>分块查找效率分析平均查找长度</fb>
+<img src="search/分块查找效率分析平均查找长度.png" alt="">
+<!-- 分块查找 end -->
+</div>    
+
+
+
+<div class="b">
+    <div class="bc">散列查找 <a href="search/散列查找算法excel演示.xlsx">点击这里下载:<fb>散列查找算法excel演示.xlsx</fb> </a></div>
+    <fb>散列查找算法的思想</fb>
+    <img src="search/散列查找算法的思想.png" alt="">
+    
+    <div class="bgy">
+        <div class="b">思考: <fb>1%13=1 14%13=1 27%13=1 79%13=1</fb> 那么1 14 27 79这几个数字怎么存储呢?</div>
+    
+        <fb>处理冲突的⽅法:拉链法</fb>
+        <img src="search/处理冲突的⽅法拉链法.png" alt="">
+    
+        <fb>散列查找解决冲突后</fb>
+        <img src="search/散列查找解决冲突后.png" alt="">
+        <img src="search/散列查找解决冲突后2.png" alt="">
+
+        散列查找解决冲突的方法还有：<fb>开放定址法</fb> <a target="_blank" href="search/哈希查找算法冲突处理开放定址法.png">点击查看开放定址法</a>
+    </div>
+
+    <div class="bgy">
+    <fb>散列查找算法的平均查找长度ASL</fb>
+    <img src="search/散列查找算法的平均查找长度ASL.png" alt="">
+
+    <fb>散列查找算法的平均查找长度ASL最理想的情况</fb>
+    <img src="search/散列查找算法的平均查找长度ASL最理想的情况.png" alt="">
+    </div>
+    <!-- 散列查找 end -->
+</div>  
+
+
+</div>
+
+<div class="bc">
+作业：
+1 求下图中两棵二叉排序树的平均查找长度ASL，在图片中画出来即可
+<img src="search/作业1.png">
+
+2 把50存到链表中，在图片中画出来即可
+<img src="search/作业2.png">
+</div>
+
+</pre>
+</body>
+</html>
