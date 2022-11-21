@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排序</title>
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+<pre>
+<div class="bcc">
+    排序
+</div>
+
+<div class="bc">
+排序的基本概念：
+<img loading="lazy" src="sort/什么是排序.png">
+<img loading="lazy" src="sort/排序算法的应用.png">
+
+评价排序算法的指标: 时间复杂度、空间复杂度、<fb>稳定性</fb>。
+<img src="sort/排序算法的评价指标时间空间复杂度.png" loading="lazy">
+<img src="sort/排序算法的评价指标稳定性.png" loading="lazy">
+
+排序算法的分类:
+<img src="sort/排序算法的分类.png" loading="lazy">
+
+排序算法基本概念小结:
+<img src="sort/排序算法基本概念总结.png" loading="lazy">
+<!-- 排序算法的基本概念 end -->
+</div>
+
+<div class="bgy">
+插入排序
+<fb><a href="sort/排序算法excel演示.xlsx">排序算法excel演示.xlsx</a></fb>
+<img src="sort/插入排序效率空间复杂度.png" loading="lazy">
+<hr>
+<img src="sort/插入排序效率时间复杂度最好的情况.png" loading="lazy">
+<hr>
+<img src="sort/插入排序效率时间复杂度最差的情况.png" loading="lazy">
+<hr>
+<img src="sort/插入排序是稳定排序.png" loading="lazy">
+<!-- 插入排序 end -->
+</div>
+
+<div class="b">
+<fb>插入排序优化版：折半插入排序</fb>
+
+<img src="sort/折半插入排序.png" loading="lazy">
+
+<img src="sort/插入排序总结.png" loading="lazy">
+<!-- 折半插入排序 end -->
+</div>
+
+<div class="b">
+<fb>希尔排序</fb><a href="sort/排序算法excel演示.xlsx">排序算法excel演示.xlsx</a>
+<img src="sort/希尔排序.png" loading="lazy">
+<!-- 希尔排序 end -->
+</div>
+
+<div class="bgy">
+选择排序之简单选择排序</fb><a href="sort/排序算法excel演示.xlsx">排序算法excel演示.xlsx</a>
+<img src="sort/简单选择排序.png" loading="lazy">
+<!-- 选择排序 end -->
+</div>
+
+<div class="bc">
+<note>选择排序之<fb>堆排序</fb></note><a href="sort/排序算法excel演示.xlsx">排序算法excel演示.xlsx</a>
+
+什么是堆?
+<img src="sort/什么是堆.png" loading="lazy">
+
+要知道什么是大根堆和小根堆，先复习一下完全二叉树的顺序存储：
+<img src="sort/完全二叉树的顺序存储.png" loading="lazy">
+
+大根堆的逻辑视角【<fb>根 > 左、右</fb>】:
+<img src="sort/大根堆的逻辑视角.png" loading="lazy">
+
+小根堆的逻辑视角【<fb>根 < 左、右</fb>】:
+<img src="sort/小根堆的逻辑视角.png" loading="lazy">
+
+<div class="bgy">
+现在有两个问题：
+我知道了什么是大根堆小根堆，那么
+1 如何基于[堆]进行排序呢？
+2 如何将一个组随机的数据构造成大根堆小根堆呢?
+</div>
+
+1 如何基于[堆]进行排序呢？很简单，遍历二叉树，每次找到最小 或 最大的结点即可
+<img src="sort/如何基于堆进行排序.png" loading="lazy">
+
+<fb>2 如何将一个组随机的数据构造成大根堆小根堆呢?</fb>
+<img src="sort/建立大根堆.png" loading="lazy">
+
+<div class="bc">
+堆排序的性能
+<img src="sort/堆排序的性能.png" loading="lazy">
+</div>
+
+堆排序知识点总结:
+<img src="sort/堆排序知识点总结.png" loading="lazy">
+<!-- 堆排序 end -->
+</div>
+
+
+<div class="b">
+<div class="bc">
+    冒泡排序:
+    啥也不说，<a target="_blank" href="sort/BubbleSortWithHungarianFolkDance.mp4">看舞蹈, 点击此处下载视频</a>
+    <!-- <video src="sort/BubbleSortWithHungarianFolkDance.mp4"></video> -->
+</div>
+
+<div class="bc">
+    快速排序: <fb>通过名字就知道这个算法自信心爆棚，这个算法的综合性能的确很不错</fb>
+    <a target="_blank" href="sort/QuickSort.mp4">看舞蹈, 点击此处下载视频</a>
+    <img src="sort/快速排序算法流程.png" loading="lazy">
+</div>
+<!-- 冒泡排序和快速排序 end -->
+</div>
+
+<div class="b">
+归并排序
+<img src="sort/什么是归并排序.png" loading="lazy">
+<div class="bc">这里"归并"的英文单词是Merge(合并/归并)，看英文更容易理解。</div>
+<img src="sort/归并排序算法步骤.png" loading="lazy">
+</div>
+
+<div class="b">
+基数排序，啥也不说，看<a target="_blank" href="sort/排序算法excel演示.xlsx">excel演示文件</a>
+</div>
+
+<div class="b">
+外部排序：<a target="_blank" href="sort/外部排序.ppt">外部排序.ppt</a>
+</div>
+
+<div class="b">
+作业:
+
+1 建立这个序列的大根堆: 53 17 78 09 45 65 87 32
+  建立这个序列的小根堆: 09 17 65 32 45 78 87 53
+  在图片中完成，下载图片: <a target="_blank" href="sort/作业1建立大根堆小根堆.png">作业1建立大根堆小根堆.png</a>
+  参考答案: <a target="_blank" href="sort/作业1建立大根堆小根堆答案.png">作业1建立大根堆小根堆答案.png</a>
+</div>
+</pre>
+
+
+</body>
+</html>
